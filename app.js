@@ -5,28 +5,27 @@ const colors = document.getElementsByClassName('jsColor')
 const range = document.getElementById('jsRange') // brush size 버튼
 const mode = document.getElementById('jsMode') // fill 버튼
 const saveBtn = document.getElementById('jsSave') // save 버튼
-
+const img = document.getElementById('paintImage') // 그림판 이미지 객체
+ctx.drawImage(img, 10, 15, 1900, 1050)
 const INITIAL_COLOR = '#2c2c2c'
-// const CANVAS_SIZE = 400
 
 // 캔버스는 두 개의 사이즈가 지정되어야 함-> css 사이즈, element 사이즈
 // 캔버스를 픽셀을 다룰 수 있는 element로서 만드는거니까 element에 width와 height를 지정해줘야함
 // 픽셀을 다루는 윈도우가 얼마나 큰지 canvas에게 알려줌
-canvas.width = 500
-canvas.height = 550
+// canvas.width = 500
+// canvas.height = 550
 
 ctx.fillStyle = 'white' // 이미지 저장할 때 default로 흰색 지정안해주면 배경 투명색으로 저장됨
 // 사다리꼴모양 그림판 만들기
 ctx.beginPath()
-ctx.moveTo(50, 10) // 시작점
-ctx.lineTo(490, 10)
-ctx.lineTo(440, 540)
-ctx.lineTo(10, 540)
-ctx.lineTo(50, 10)
-ctx.stroke()
+ctx.moveTo(500, 100) // 시작점
+ctx.lineTo(1485, 145)
+ctx.lineTo(1400, 705)
+ctx.lineTo(430, 670)
+ctx.lineTo(500, 100)
+// ctx.stroke()
 ctx.clip()
 
-ctx.fillRect(0, 0, 500, 550) // x, y, w, h
 ctx.strokeStyle = INITIAL_COLOR // default 검정
 ctx.fillStyle = INITIAL_COLOR
 ctx.lineWidth = 2.5 // default 선 굵기
