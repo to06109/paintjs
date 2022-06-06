@@ -9,6 +9,8 @@ const img = document.getElementById('paintImage') // 그림판 이미지 객체
 
 const INITIAL_COLOR = '#2c2c2c'
 
+// const dataURL = canvas.toDataURL()
+// console.log(dataURL)
 // 캔버스는 두 개의 사이즈가 지정되어야 함-> css 사이즈, element 사이즈
 // 캔버스를 픽셀을 다룰 수 있는 element로서 만드는거니까 element에 width와 height를 지정해줘야함
 // 픽셀을 다루는 윈도우가 얼마나 큰지 canvas에게 알려줌
@@ -94,6 +96,17 @@ function handleCM(event) {
 }
 
 function handelSaveClick() {
+  // 저장 안되는 이유 -> 크로스 도메인 이슈
+  // 오류: Tainted canvases may not be exported.
+  // https://huiyu.tistory.com/entry/canvas-image-%EB%A1%9C-%EB%B0%94%EA%BE%B8%EB%8A%94-%EB%B0%A9%EB%B2%95-%ED%81%AC%EB%A1%9C%EC%8A%A4%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%9D%B4%EC%8A%88
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+  // const dataURL = canvas.toDataURL()
+  // console.log(dataURL)
+
+  // const source = canvas.toDataURL('images/png')
+  // const test = document.createElement('img')
+  // test.src = source
+
   const image = canvas.toDataURL() //default가 png
   const link = document.createElement('a') // <a></a>
   // href는 image(URL) 이 되어야하고 download는 image 이름이 되어야함
