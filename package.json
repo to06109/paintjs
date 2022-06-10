@@ -10,5 +10,5 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
-  "homepage": "https://to06109.github.io/mydesign_paint"
+  "homepage": "https://to06109.github.io/paintjs"
 }
