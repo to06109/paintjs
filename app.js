@@ -9,8 +9,6 @@ const img = document.getElementById('paintImage') // 그림판 이미지 객체
 
 const INITIAL_COLOR = '#2c2c2c'
 
-// const dataURL = canvas.toDataURL()
-// console.log(dataURL)
 // 캔버스는 두 개의 사이즈가 지정되어야 함-> css 사이즈, element 사이즈
 // 캔버스를 픽셀을 다룰 수 있는 element로서 만드는거니까 element에 width와 height를 지정해줘야함
 // 픽셀을 다루는 윈도우가 얼마나 큰지 canvas에게 알려줌
